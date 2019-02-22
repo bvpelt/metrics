@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author: bart
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(24)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(24)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: geslacht
+                  type: varchar(1)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 11
+      author: bart
+      changes:
+      - addColumn:
+          columns:
+            - column:
+                name: age
+                type: integer
+          tableName: person
